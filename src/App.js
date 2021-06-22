@@ -1,24 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from "./components/Card";
+import { AnimateSharedLayout } from "framer-motion";
+import React, { useEffect, useState } from "react";
 
 function App() {
+  const [columns, setColumns] = useState(4);
+
+  useEffect(() => {
+    if (columns <= 0) {
+      setColumns(1);
+    }
+  }, [columns]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='controls'>
+        <button onClick={(e) => setColumns(columns + 1)}>+</button>
+        <p>{columns}</p>
+        <button onClick={(e) => setColumns(columns - 1)}>-</button>
+      </div>
+      <div
+        className='container'
+        style={{
+          gridTemplateColumns: `repeat(${columns}, 20rem)`,
+        }}>
+        <AnimateSharedLayout>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </AnimateSharedLayout>
+      </div>
+    </>
   );
 }
 

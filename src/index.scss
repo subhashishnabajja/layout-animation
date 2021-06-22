@@ -1,0 +1,36 @@
+*,
+*::after,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  background: hsl(0, 0%, 16%);
+  display: grid;
+  gap: 1rem;
+}
+.controls {
+  background-color: white;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  p {
+    font-size: 1.2rem;
+  }
+  button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.3rem;
+  }
+}
