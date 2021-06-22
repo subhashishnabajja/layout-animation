@@ -3,7 +3,7 @@ import { AnimateSharedLayout } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 function App() {
-  const [columns, setColumns] = useState(4);
+  const [columns, setColumns] = useState(1);
 
   useEffect(() => {
     if (columns <= 0) {
